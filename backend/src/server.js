@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 
 import authRoutes from "./routes/auth.route.js";
 import messageRoutes from "./routes/message.route.js";
+import { connectDB } from "./lib/db.js";
 
 
 
@@ -16,5 +17,6 @@ app.use("/api/message", messageRoutes);
 const PORT= process.env.PORT || 3000;
 
 app.listen(PORT, ()=>{
-    console.log("server is run+ing 3000 00");
+    console.log("server is run+ing 3000");
+    connectDB();
 })
