@@ -3,11 +3,11 @@ import { ENV } from './env.js';
 
 
 export const generateToken= (userId, res)=>{
-    const {JWT_SECRECT} = ENV;
-    if(!JWT_SECRECT){
+    const {JWT_SECRET} = ENV;
+    if(!JWT_SECRET){
         throw new Error("JWT_SECRECT is not configured");
     }
-    const token= jwt.sign({userId}, ENV.JWT_SECRECT,{
+    const token= jwt.sign({userId}, ENV.JWT_SECRET,{
         expiresIn: "7d",
     });
 
