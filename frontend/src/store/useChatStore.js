@@ -23,7 +23,7 @@ export const useChatStore = create ((set, get)=>({
     getAllContacts: async()=>{
         set({isUsersLoading: true});
         try {
-            const res= await axiosInstance.get("/messages/contacts");
+            const res= await axiosInstance.get("/message/contacts");
             //console.log("All contacts : ", res.data);
             set({allContacts: res.data});
         } catch (error) {
@@ -35,7 +35,7 @@ export const useChatStore = create ((set, get)=>({
     getMyChatPartners: async()=>{
         set({isUsersLoading: true});
         try {
-            const res= await axiosInstance.get("/messages/chats");
+            const res= await axiosInstance.get("/message/chats");
             set({chats: res.data});
 
         } catch (error) {
