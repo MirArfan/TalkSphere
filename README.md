@@ -23,55 +23,53 @@ TalkSphere is a production-ready, full-stack real-time chat application built us
 
 <br>
 
-## ✨ Key Features & Highlights
 
-- **🔐 Custom Auth Mechanism:** Secure user signup, login, and logout functionalities utilizing custom JSON Web Tokens (JWT) stored safely in HTTP-Only cookies (No third-party auth providers used).
-- **⚡ Real-Time Communications:** Instant message delivery and event broadcasting driven by **Socket.io**.
-- **🟢 Presence & Activity Tracking:** Dynamic online/offline status indicators for active users.
-- **🔔 Interactive UX Elements:** Built-in notification alerts and typing sounds with a user-controlled toggle switch.
-- **📨 Automated Email Workflows:** Triggering responsive, customized welcome emails immediately upon successful registration via **Resend API**.
-- **🗂️ Cloud Media Storage:** Seamless profile picture updates with asynchronous base64 uploads handled by **Cloudinary**.
-- **🚦 Cloud-Native Security:** API Shielding, intelligent bot detection, and strict request rate-limiting powered by **Arcjet**.
-- **🎨 Modern UI/UX:** Built using React, Tailwind CSS, and styled components from **DaisyUI**.
-- **🧠 Lightweight State Management:** Centralized frontend state machine governed by **Zustand** (eliminating Redux boilerplate).
-- **🧑‍💻 Enterprise Git Workflow:** Managed strictly using standard development practices including branching, Pull Requests (PRs), and structural merges.
+## Features
+
+- User authentication with JWT
+- Login & signup system using HTTP-only cookies
+- Real-time messaging with Socket.io
+- Online/offline user status
+- Profile picture upload with Cloudinary
+- Welcome email after registration using Resend
+- Protected API routes with middleware
+- Rate limiting & bot protection using Arcjet
+- Responsive and clean UI with Tailwind CSS & DaisyUI
+- Global state management using Zustand
+- Sound notification toggle support
 
 
-## 🛠️ Technical Stack
+##  Technical Stack
 - **Frontend:** React.js, Tailwind CSS, DaisyUI, Zustand, Axios, Socket.io-client
 - **Backend:** Node.js, Express.js, Socket.io
 - **Database:** MongoDB, Mongoose 
-- **Third-Party Integrations:** Cloudinary (Media), Resend (Email), Arcjet (Security Firewall)
+- **Third-Party Integrations:** Cloudinary (Media), Resend API (Email), Arcjet (Security Firewall)
 
 <br>
 
-## 🛣️ API Endpoints Reference
+## API Routes
 
-### 🔐 Authentication API (`/api/auth`)
-*Note: Arcjet Security Protection is applied globally to all Auth routes.*
+### Auth Routes (`/api/auth`)
 
-| Method | Endpoint | Description |
-| :--- | :--- | :--- | 
-| `POST` | `/api/auth/signup` | Register a new user & trigger Welcome Email | 
-| `POST` | `/api/auth/login` | Authenticate user & issue JWT Cookie | 
-| `POST` | `/api/auth/logout` | Clear JWT Cookie & log out user | 
-| `PUT` | `/api/auth/update-profile` | Upload profile picture to Cloudinary | 
-| `GET` | `/api/auth/check` | Validate session and return current user data |
+| Method | Route | Description |
+|--------|-------|-------------|
+| POST | `/signup` | Create a new account |
+| POST | `/login` | Login user |
+| POST | `/logout` | Logout user |
+| PUT | `/update-profile` | Update profile image |
+| GET | `/check` | Check authentication status |
 
-### 💬 Messages & Chat API (`/api/message`)
-*Note: All Message routes are globally protected by `protectRoute` middleware.*
+### Message Routes (`/api/message`)
 
-| Method | Endpoint | Description |
-| :--- | :--- | :--- |
-| `GET` | `/api/message/contacts` | Fetch all available contacts | 
-| `GET` | `/api/message/chats` | Fetch unique chat partners list (Sidebar) |
-| `GET` | `/api/message/:id` | Get full message history with a specific user | 
-| `POST` | `/api/message/send/:id` | Send a message to a specific user (Real-time) |  
-
-
+| Method | Route | Description |
+|--------|-------|-------------|
+| GET | `/contacts` | Get all contacts |
+| GET | `/chats` | Get chat users |
+| GET | `/:id` | Get messages with a user |
+| POST | `/send/:id` | Send a message |
 <br>
 
-## ⚙️ Environment Variables Setup
+##  Environment Variables Setup
 
 Create a `.env` file inside the root of your `backend` directory and configure the following variables:
 
