@@ -2,11 +2,11 @@
 
 TalkSphere is a production-ready, full-stack real-time chat application built using the MERN ecosystem. It features robust JWT-based authentication, instant messaging powered by WebSockets, advanced cloud-native storage, and comprehensive API security filtering.
 
-<!-- <br>
+<br>
 
-## 🚀 Deployment & Repository Links
-- **Live Application Link:** [Insert your Sevalla Live Link Here]
-- **Backend API Endpoint:** [Insert your Server Live Link Here] -->
+##  Deployment & Repository Links
+*   **Live Application:** [talksphere-v2x2.onrender.com](https://talksphere-v2x2.onrender.com/)
+*   **Backend API Endpoint:** [talksphere-backend-mpp9.onrender.com](https://talksphere-backend-mpp9.onrender.com/)
 
 <br>
 
